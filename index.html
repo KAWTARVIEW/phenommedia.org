@@ -1,128 +1,633 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HUNANIMA - Machines Agricoles Simples</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHENOM MARKETING &amp; MEDIA. LLC | Digital Media &amp; Communications Studio</title>
+  <meta name="description" content="Private independent marketing, telecommunications, and digital media strategy studio in Atlanta, Georgia."[cite: 5] />
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0A0F1D',
+            surfaceDark: '#131C31',
+            cardBg: '#1A2540',
+            neonViolet: {
+              DEFAULT: '#8B5CF6',
+              light: '#A78BFA',
+              dark: '#7C3AED',
+            },
+            electricCyan: '#06B6D4',
+            lightGray: '#F8FAFC',
+          },
+          fontFamily: {
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['"Inter"', 'sans-serif'],
+          },
+          boxShadow: {
+            'neon-glow': '0 0 40px -10px rgba(139, 92, 246, 0.4)',
+            'card-shadow': '0 20px 40px -12px rgba(10, 15, 29, 0.5)',
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fefefe;
-      color: #333;
+      background-color: #0A0F1D;
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
     }
-    header {
-      background-color: #2e7d32; /* Vert foncé */
-      color: #fdd835; /* Jaune vif */
-      padding: 20px;
-      text-align: center;
+
+    .gradient-text {
+      background: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 50%, #06B6D4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.2em;
-    }
-    nav {
-      background-color: #fdd835;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #2e7d32;
-    }
-    .hero {
-      background: url('https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg') no-repeat center center/cover;
-      height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
-      font-size: 2em;
-    }
-    section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-    section h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .gallery img {
-      width: 280px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    footer {
-      background-color: #2e7d32;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    footer p {
-      margin: 5px 0;
+
+    .glass-panel {
+      background: rgba(19, 28, 49, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(139, 92, 246, 0.2);
     }
   </style>
 </head>
-<body>
+<body class="antialiased selection:bg-neonViolet selection:text-white">
 
-  <header>
-    <h1>HUNANIMA</h1>
-    <p>Machines Agricoles Simples et Fiables</p>
+  <!-- STICKY NAVIGATION HEADER -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b border-neonViolet/20 bg-midnight/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Brand Identity -->
+        <a href="#hero" class="flex items-center gap-3.5 group">
+          <div class="w-10 h-10 rounded-xl border border-neonViolet/50 bg-surfaceDark flex items-center justify-center shadow-neon-glow group-hover:border-electricCyan transition-colors">
+            <svg class="w-5 h-5 text-neonViolet-light" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M2 17L12 22L22 17" stroke="#06B6D4" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="block font-heading text-sm sm:text-base font-bold tracking-wider text-lightGray leading-none">PHENOM MARKETING &amp; MEDIA</span>
+            <span class="block text-[10px] uppercase tracking-[0.25em] text-neonViolet-light font-semibold mt-1">LLC &bull; Digital &amp; Communications</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-lightGray/80">
+          <a href="#gallery" class="hover:text-neonViolet-light transition-colors">Showcase</a>
+          <a href="#focus" class="hover:text-neonViolet-light transition-colors">Capabilities</a>
+          <a href="#studio" class="hover:text-neonViolet-light transition-colors">Atlanta Hub</a>
+          <a href="#contact" class="hover:text-neonViolet-light transition-colors">Contact</a>
+        </nav>
+
+        <!-- Primary CTA -->
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="tel:+15188967498" class="hidden lg:flex items-center gap-1.5 text-xs text-lightGray/75 hover:text-lightGray transition-colors tabular-nums font-semibold">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-electricCyan"></i>
+            +1 (518) 896-7498
+          </a>
+          <a href="#contact" class="px-5 py-2.5 rounded-xl bg-neonViolet hover:bg-neonViolet-dark text-white font-semibold text-xs uppercase tracking-widest transition-all shadow-md hover:shadow-neon-glow">
+            Connect Desk
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2 rounded-xl text-lightGray hover:text-neonViolet-light border border-neonViolet/30">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surfaceDark border-b border-neonViolet/25 px-6 py-5 space-y-4 shadow-xl">
+      <a href="#gallery" class="block text-sm font-medium text-lightGray hover:text-neonViolet-light">Digital Showcase</a>
+      <a href="#focus" class="block text-sm font-medium text-lightGray hover:text-neonViolet-light">Media Capabilities</a>
+      <a href="#studio" class="block text-sm font-medium text-lightGray hover:text-neonViolet-light">Atlanta Operations Hub</a>
+      <a href="#contact" class="block text-sm font-medium text-lightGray hover:text-neonViolet-light">Contact &amp; Inquiries</a>
+      <div class="pt-3 border-t border-neonViolet/20 flex flex-col gap-2">
+        <a href="tel:+15188967498" class="text-xs text-lightGray/80 font-medium">+1 (518) 896-7498</a>
+        <a href="mailto:support@phenommedia.org" class="text-xs text-neonViolet-light font-semibold">support@phenommedia.org</a>
+      </div>
+    </div>
   </header>
 
-  <nav>
-    <a href="#about">À propos</a>
-    <a href="#gallery">Galerie</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main>
+    <!-- ===================================================================== -->
+    <!-- SECTION 1: HERO & VISUAL SHOWCASE                                     -->
+    <!-- ===================================================================== -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-midnight">
+      <div class="absolute top-1/4 right-0 w-96 h-96 rounded-full bg-neonViolet/20 blur-[130px] pointer-events-none"></div>
+      <div class="absolute bottom-0 left-10 w-80 h-80 rounded-full bg-electricCyan/15 blur-[120px] pointer-events-none"></div>
 
-  <div class="hero">
-    <p>Votre partenaire pour des machines agricoles durables</p>
-  </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Text Column -->
+          <div class="lg:col-span-6 space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neonViolet/35 bg-surfaceDark text-xs uppercase tracking-[0.2em] text-neonViolet-light font-bold shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-electricCyan animate-pulse"></span>
+              Atlanta, Georgia &bull; Telecommunications &amp; Media[cite: 5]
+            </div>
 
-  <section id="about">
-    <h2>À propos de nous</h2>
-    <p>
-      Chez <strong>HUNANIMA</strong>, nous nous spécialisons dans la fabrication et la distribution de 
-      <strong>machines agricoles simples</strong> pour faciliter le travail des agriculteurs. 
-      Nos solutions combinent <em>durabilité, efficacité et innovation</em> afin de répondre aux besoins de toutes les exploitations.
-    </p>
-  </section>
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-[56px] font-bold leading-[1.1] tracking-tight text-lightGray">
+              Next-Gen Communications &amp; <span class="gradient-text italic">Digital Media</span> Strategy.
+            </h1>
 
-  <section id="gallery">
-    <h2>Nos Machines</h2>
-    <div class="gallery">
-      <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse">
-      <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Machine agricole">
-      <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Équipement agricole simple">
+            <p class="text-base sm:text-lg text-lightGray/75 max-w-xl leading-relaxed">
+              <strong class="text-lightGray font-semibold">PHENOM MARKETING &amp; MEDIA. LLC</strong>[cite: 5] delivers high-impact telecommunications infrastructure, digital marketing architecture, and modern media brand positioning.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="#contact" class="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-neonViolet hover:bg-neonViolet-dark text-white font-semibold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-neon-glow">
+                Request Consultation
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a href="#gallery" class="inline-flex items-center gap-2 px-7 py-4 rounded-xl border border-neonViolet/30 hover:border-electricCyan bg-surfaceDark text-lightGray font-semibold text-xs uppercase tracking-wider transition-all">
+                Explore Showcase
+                <i data-lucide="layers" class="w-4 h-4 text-electricCyan"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Image Column -->
+          <div class="lg:col-span-6">
+            <div class="relative rounded-2xl overflow-hidden border border-neonViolet/30 shadow-card-shadow group">
+              <img 
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85" 
+                alt="Modern digital analytics, media communications, and telecommunications dashboard" 
+                class="w-full h-[440px] sm:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-midnight/85 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-6 left-6 right-6 p-5 glass-panel rounded-xl flex items-center justify-between">
+                <div>
+                  <span class="text-[11px] uppercase tracking-widest text-electricCyan font-bold block">Atlanta Registry</span>
+                  <span class="font-heading text-base sm:text-lg font-bold text-lightGray">3770 Rockport Pl SW, Atlanta, GA</span>[cite: 5]
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-neonViolet text-white flex items-center justify-center shrink-0">
+                  <i data-lucide="radio" class="w-5 h-5"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 2: VISUAL GALLERY (LIGHTBOX CAPABLE)                          -->
+    <!-- ===================================================================== -->
+    <section id="gallery" class="py-20 bg-surfaceDark border-y border-neonViolet/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-electricCyan font-bold">01 / Creative Portfolio</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-lightGray mt-1">
+            Digital Media &amp; Communications
+          </h2>
+          <p class="text-lightGray/70 text-sm sm:text-base mt-2">
+            Click any image to inspect our high-tech visual work in full resolution.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-neonViolet/25 shadow-card-shadow cursor-pointer lightbox-trigger" data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85" data-title="Digital Marketing Strategy & Media Analytics">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=85" alt="Digital media analytics and marketing metrics" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] uppercase tracking-widest text-electricCyan font-bold">Media Strategy</span>
+              <h3 class="font-heading text-xl font-bold mt-0.5">Campaign Analytics &amp; Growth</h3>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-neonViolet/25 shadow-card-shadow cursor-pointer lightbox-trigger" data-img="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85" data-title="Telecommunications & Network Infrastructure">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=85" alt="Telecommunications and digital team collaboration" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] uppercase tracking-widest text-electricCyan font-bold">Infrastructure</span>
+              <h3 class="font-heading text-xl font-bold mt-0.5">Telecommunications Solutions</h3>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-neonViolet/25 shadow-card-shadow cursor-pointer lightbox-trigger" data-img="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=85" data-title="Content Production & Brand Studio">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=85" alt="Creative content production workspace" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] uppercase tracking-widest text-electricCyan font-bold">Brand Production</span>
+              <h3 class="font-heading text-xl font-bold mt-0.5">Content Studio &amp; Design</h3>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 3: INTERACTIVE CAPABILITIES                                   -->
+    <!-- ===================================================================== -->
+    <section id="focus" class="py-20 bg-midnight">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-neonViolet-light font-bold">02 / Core Expertise</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-lightGray mt-1">
+            Media &amp; Telecommunication Services
+          </h2>
+          <p class="text-lightGray/70 text-sm sm:text-base mt-2">
+            Select a service pillar below to inspect our operational approach.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left Tabs -->
+          <div class="lg:col-span-5 space-y-3">
+            <button type="button" data-focus="0" class="focus-tab w-full text-left p-5 rounded-xl border border-neonViolet bg-surfaceDark shadow-neon-glow transition-all flex items-center justify-between group">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-electricCyan font-bold">Pillar I</span>
+                <h3 class="font-heading text-xl font-bold text-lightGray mt-0.5">Digital Marketing &amp; Media Strategy</h3>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-neonViolet-light"></i>
+            </button>
+
+            <button type="button" data-focus="1" class="focus-tab w-full text-left p-5 rounded-xl border border-neonViolet/20 bg-surfaceDark/50 hover:border-neonViolet/50 transition-all flex items-center justify-between group">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-lightGray/50 group-hover:text-electricCyan font-bold">Pillar II</span>
+                <h3 class="font-heading text-xl font-bold text-lightGray mt-0.5">Telecommunications &amp; Connectivity</h3>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-lightGray/40 group-hover:text-neonViolet-light"></i>
+            </button>
+
+            <button type="button" data-focus="2" class="focus-tab w-full text-left p-5 rounded-xl border border-neonViolet/20 bg-surfaceDark/50 hover:border-neonViolet/50 transition-all flex items-center justify-between group">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-lightGray/50 group-hover:text-electricCyan font-bold">Pillar III</span>
+                <h3 class="font-heading text-xl font-bold text-lightGray mt-0.5">Information &amp; Brand Systems</h3>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-lightGray/40 group-hover:text-neonViolet-light"></i>
+            </button>
+          </div>
+
+          <!-- Right Display Card with Image & Details -->
+          <div class="lg:col-span-7 bg-surfaceDark rounded-2xl border border-neonViolet/30 p-8 shadow-card-shadow relative overflow-hidden">
+            <div id="focus-content" class="space-y-6">
+              <img id="focus-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85" alt="Digital Marketing Strategy" class="w-full h-64 object-cover rounded-xl border border-neonViolet/20">
+              <div>
+                <span id="focus-tag" class="text-xs uppercase tracking-widest text-electricCyan font-bold">Digital Marketing &amp; Media Strategy</span>
+                <h3 id="focus-title" class="font-heading text-2xl sm:text-3xl font-bold text-lightGray mt-1">Amplifying Brand Reach &amp; Engagement</h3>
+              </div>
+              <p id="focus-desc" class="text-lightGray/75 text-sm sm:text-base leading-relaxed">
+                Comprehensive multi-channel campaigns, performance media buying, and data-driven audience targeting designed to elevate brand authority across digital ecosystems.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 4: ATLANTA OPERATIONS HUB                                     -->
+    <!-- ===================================================================== -->
+    <section id="studio" class="py-20 bg-surfaceDark border-y border-neonViolet/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-electricCyan font-bold">03 / Regional Presence</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-lightGray mt-1">
+            Atlanta Operations &amp; Standards
+          </h2>
+          <p class="text-lightGray/70 text-sm sm:text-base mt-2">
+            Operating from Fulton County, Georgia with national digital reach[cite: 5].
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-neonViolet/25 bg-midnight p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-neonViolet/20 text-neonViolet-light flex items-center justify-center mb-4">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-heading text-xl font-bold text-lightGray">Registered Headquarters</h3>
+              <p class="text-sm text-lightGray/75 mt-2">
+                3770 Rockport Pl SW<br>Atlanta, GA 30331-3731, United States[cite: 5]
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-neonViolet/15 text-xs text-electricCyan font-bold uppercase tracking-wider">
+              Atlanta, Georgia[cite: 5]
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-neonViolet/25 bg-midnight p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-neonViolet/20 text-neonViolet-light flex items-center justify-center mb-4">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-heading text-xl font-bold text-lightGray">Private Independent</h3>
+              <p class="text-sm text-lightGray/75 mt-2">
+                Uncompromising commitment to objective media strategy, transparent telecommunication services, and client success.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-neonViolet/15 text-xs text-electricCyan font-bold uppercase tracking-wider">
+              NAICS 5178 &bull; All Other Telecom[cite: 5]
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-neonViolet/25 bg-midnight p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-neonViolet/20 text-neonViolet-light flex items-center justify-center mb-4">
+                <i data-lucide="headphones" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-heading text-xl font-bold text-lightGray">Communications Desk</h3>
+              <p class="text-sm text-lightGray/75 mt-2">
+                Responsive digital support and strategic media consultations handled directly by our executive desk.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-neonViolet/15 text-xs text-electricCyan font-bold uppercase tracking-wider">
+              24-Hour Response Window
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 5: CONTACT & INQUIRY FORM                                     -->
+    <!-- ===================================================================== -->
+    <section id="contact" class="py-20 bg-midnight relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Left Info Column -->
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <span class="text-xs uppercase tracking-[0.25em] text-neonViolet-light font-bold">04 / Executive Desk</span>
+              <h2 class="font-heading text-3xl sm:text-4xl font-bold text-lightGray mt-1">
+                Initiate Collaboration.
+              </h2>
+              <p class="text-lightGray/75 text-sm sm:text-base mt-2 leading-relaxed">
+                Connect directly with our Atlanta media team to discuss telecommunications infrastructure, digital marketing, or brand strategy.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-xl bg-surfaceDark border border-neonViolet/25 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-neonViolet/20 text-neonViolet-light flex items-center justify-center">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="text-[10px] uppercase tracking-wider text-lightGray/60 block">Support Email</span>
+                    <a href="mailto:support@phenommedia.org" class="text-lightGray font-semibold text-sm hover:text-neonViolet-light break-all">
+                      support@phenommedia.org
+                    </a>
+                  </div>
+                </div>
+                <button type="button" id="copy-email-btn" title="Copy Email" class="p-2 rounded-xl border border-neonViolet/30 hover:border-electricCyan text-lightGray/70 hover:text-electricCyan transition-colors">
+                  <i data-lucide="copy" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <div class="p-4 rounded-xl bg-surfaceDark border border-neonViolet/25 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-neonViolet/20 text-neonViolet-light flex items-center justify-center">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-[10px] uppercase tracking-wider text-lightGray/60 block">Direct Telephone</span>
+                  <a href="tel:+15188967498" class="text-lightGray font-semibold text-base hover:text-neonViolet-light tabular-nums">
+                    +1 (518) 896-7498
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Form Column -->
+          <div class="lg:col-span-7">
+            <div class="rounded-2xl border border-neonViolet/30 bg-surfaceDark p-8 shadow-card-shadow">
+              <h3 class="font-heading text-2xl font-bold text-lightGray mb-2">Media &amp; Telecom Inquiry</h3>
+              <p class="text-xs text-lightGray/60 mb-6">Routed directly to PHENOM MARKETING &amp; MEDIA. LLC[cite: 5].</p>
+
+              <form id="inquiry-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="name" class="block text-xs uppercase tracking-wider text-lightGray/75 font-bold mb-1.5">Full Name *</label>
+                    <input type="text" id="name" required placeholder="e.g., Taylor Vance" class="w-full px-4 py-3 rounded-xl bg-midnight border border-neonViolet/30 text-lightGray text-sm placeholder-lightGray/35 focus:outline-none focus:border-electricCyan">
+                  </div>
+                  <div>
+                    <label for="email" class="block text-xs uppercase tracking-wider text-lightGray/75 font-bold mb-1.5">Email Address *</label>
+                    <input type="email" id="email" required placeholder="name@domain.com" class="w-full px-4 py-3 rounded-xl bg-midnight border border-neonViolet/30 text-lightGray text-sm placeholder-lightGray/35 focus:outline-none focus:border-electricCyan">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="message" class="block text-xs uppercase tracking-wider text-lightGray/75 font-bold mb-1.5">Project Scope &amp; Objectives *</label>
+                  <textarea id="message" rows="4" required placeholder="Describe your digital media campaign, telecommunications needs, or strategic objectives..." class="w-full px-4 py-3 rounded-xl bg-midnight border border-neonViolet/30 text-lightGray text-sm placeholder-lightGray/35 focus:outline-none focus:border-electricCyan"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-neonViolet hover:bg-neonViolet-dark text-white font-semibold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2">
+                  <span>Transmit Inquiry</span>
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+              </form>
+
+              <!-- Success State -->
+              <div id="form-success" class="hidden text-center py-8 space-y-3">
+                <div class="w-12 h-12 rounded-full bg-neonViolet/25 border border-neonViolet-light flex items-center justify-center text-neonViolet-light mx-auto">
+                  <i data-lucide="check" class="w-6 h-6"></i>
+                </div>
+                <h4 class="font-heading text-2xl font-bold text-lightGray">Inquiry Prepared</h4>
+                <p class="text-xs text-lightGray/75 max-w-sm mx-auto">
+                  Thank you, <span id="confirm-name" class="font-semibold text-lightGray"></span>. Your message has been formatted for <span class="text-electricCyan font-semibold">support@phenommedia.org</span>.
+                </p>
+                <div class="pt-2">
+                  <a id="mailto-fallback" href="mailto:support@phenommedia.org" class="px-6 py-2.5 rounded-xl bg-neonViolet text-white text-xs font-semibold uppercase tracking-wider inline-block">
+                    Open in Mail Client
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#050811] text-lightGray/70 py-12 text-xs border-t border-neonViolet/25">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
+        <div>
+          <span class="font-heading text-lg font-bold text-white block">PHENOM MARKETING &amp; MEDIA. LLC</span>[cite: 5]
+          <span class="text-[10px] uppercase tracking-widest text-electricCyan block mt-0.5">Telecommunications &amp; Digital Media Studio</span>
+        </div>
+        <div class="text-center md:text-right">
+          <p>3770 Rockport Pl SW, Atlanta, GA 30331-3731</p>[cite: 5]
+          <p class="mt-1">Email: <a href="mailto:support@phenommedia.org" class="text-neonViolet-light hover:underline">support@phenommedia.org</a> | Phone: <a href="tel:+15188967498" class="text-white hover:underline tabular-nums">+1 (518) 896-7498</a></p>
+        </div>
+      </div>
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-lightGray/50">
+        <p>&copy; <span id="current-year"></span> PHENOM MARKETING &amp; MEDIA. LLC[cite: 5]. All Rights Reserved.</p>
+        <p>Private independent media entity.</p>
+      </div>
     </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contactez-nous</h2>
-    <p><strong>Email :</strong> admin@tyusex.shop</p>
-    <p><strong>Téléphone :</strong> +33 7 38 50 26 36</p>
-    <p><strong>Adresse :</strong> Avenue Baratier, Montmorency, 95160, France</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 HUNANIMA - Tous droits réservés.</p>
   </footer>
 
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox-modal" class="hidden fixed inset-0 z-50 bg-midnight/95 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="relative max-w-4xl w-full">
+      <button type="button" id="lightbox-close" class="absolute -top-12 right-0 text-white hover:text-electricCyan p-2">
+        <i data-lucide="x" class="w-8 h-8"></i>
+      </button>
+      <img id="lightbox-img" src="" alt="Expanded View" class="w-full max-h-[80vh] object-contain rounded-2xl border border-neonViolet/40">
+      <p id="lightbox-caption" class="text-white text-center font-heading text-xl mt-4"></p>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-3 rounded-xl bg-surfaceDark border border-electricCyan text-white text-xs font-semibold uppercase tracking-wider shadow-lg">
+    Email copied to clipboard
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    lucide.createIcons();
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Lightbox Functionality
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        lightboxImg.src = trigger.dataset.img;
+        lightboxCaption.textContent = trigger.dataset.title;
+        lightboxModal.classList.remove('hidden');
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => lightboxModal.classList.add('hidden'));
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) lightboxModal.classList.add('hidden');
+    });
+
+    // Interactive Focus Tabs
+    const focusData = [
+      {
+        tag: 'Digital Marketing & Media Strategy',
+        title: 'Amplifying Brand Reach & Engagement',
+        desc: 'Comprehensive multi-channel campaigns, performance media buying, and data-driven audience targeting designed to elevate brand authority across digital ecosystems.',
+        img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85'
+      },
+      {
+        tag: 'Telecommunications & Connectivity',
+        title: 'Reliable Infrastructure & Communication Solutions',
+        desc: 'Advanced telecommunication networks, secure data exchange systems, and seamless connectivity architectures built for modern enterprises.',
+        img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=85'
+      },
+      {
+        tag: 'Information & Brand Systems',
+        title: 'Integrated Brand Positioning & Digital Architecture',
+        desc: 'Strategic brand identity design, information architecture, and digital asset management tailored for scalable market dominance.',
+        img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=85'
+      }
+    ];
+
+    const focusTabs = document.querySelectorAll('.focus-tab');
+    const focusImg = document.getElementById('focus-img');
+    const focusTag = document.getElementById('focus-tag');
+    const focusTitle = document.getElementById('focus-title');
+    const focusDesc = document.getElementById('focus-desc');
+
+    focusTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        focusTabs.forEach(t => {
+          t.classList.remove('border-neonViolet', 'bg-surfaceDark', 'shadow-neon-glow');
+          t.classList.add('border-neonViolet/20', 'bg-surfaceDark/50');
+          t.querySelector('span').classList.remove('text-electricCyan');
+          t.querySelector('span').classList.add('text-lightGray/50');
+          t.querySelector('i').classList.remove('text-neonViolet-light');
+          t.querySelector('i').classList.add('text-lightGray/40');
+        });
+
+        tab.classList.remove('border-neonViolet/20', 'bg-surfaceDark/50');
+        tab.classList.add('border-neonViolet', 'bg-surfaceDark', 'shadow-neon-glow');
+        tab.querySelector('span').classList.add('text-electricCyan');
+        tab.querySelector('i').classList.add('text-neonViolet-light');
+
+        const data = focusData[index];
+        focusImg.src = data.img;
+        focusTag.textContent = data.tag;
+        focusTitle.textContent = data.title;
+        focusDesc.textContent = data.desc;
+      });
+    });
+
+    // Copy Email Toast
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    const toast = document.getElementById('toast');
+    copyEmailBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('support@phenommedia.org').then(() => {
+        toast.classList.remove('hidden');
+        setTimeout(() => toast.classList.add('hidden'), 2500);
+      });
+    });
+
+    // Inquiry Form Submission
+    const inquiryForm = document.getElementById('inquiry-form');
+    const formSuccess = document.getElementById('form-success');
+    const confirmName = document.getElementById('confirm-name');
+    const mailtoFallback = document.getElementById('mailto-fallback');
+
+    inquiryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      confirmName.textContent = name;
+      const subject = encodeURIComponent(`Media & Telecom Inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nProject Scope:\n${message}`);
+      mailtoFallback.href = `mailto:support@phenommedia.org?subject=${subject}&body=${body}`;
+
+      inquiryForm.classList.add('hidden');
+      formSuccess.classList.remove('hidden');
+    });
+  </script>
 </body>
 </html>
